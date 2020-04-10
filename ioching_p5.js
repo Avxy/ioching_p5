@@ -8,7 +8,7 @@ let CountValue1;
 let CountValue2;
 let CountValue3;
 let LineValue;
-var asciipic;  
+let asciipic;  
 
 
 
@@ -38,22 +38,10 @@ let e6=0;
 
 
 
-// Two ArrayLists to store the vertices for two shapes
-// This example assumes that each shape will have the same
-// number of vertices, i.e. the size of each ArrayList will be the same
-let circle = [];
-let square = [];
 
-// An ArrayList for a third set of vertices, the ones we will be drawing
-// in the window
-let morph = [];
-
-// This boolean variable will control if we are morphing to a circle or square
-let state = false;
-
-
-
-
+let coinCountValue1=0;
+let coinCountValue2=0;
+let coinCountValue3=0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -63,43 +51,7 @@ function setup() {
   
   
   
-///////////////////////// 
-
-  // Create a circle using vectors pointing from center
-  for (let angle = 0; angle < 360; angle += 9) {
-    // Note we are not starting from 0 in order to match the
-    // path of a circle.
-    let v = p5.Vector.fromAngle(radians(angle - 135));
-    v.mult(100);
-    circle.push(v);
-    // Let's fill out morph ArrayList with blank PVectors while we are at it
-    morph.push(createVector());
-  }
-
-  // A square is a bunch of vertices along straight lines
-  // Top of square
-  for (let x = -50; x < 50; x += 10) {
-    square.push(createVector(x, -50));
-  }
-  // Right side
-  for (let y = -50; y < 50; y += 10) {
-    square.push(createVector(50, y));
-  }
-  // Bottom
-  for (let x = 50; x > -50; x -= 10) {
-    square.push(createVector(x, 50));
-  }
-  // Left side
-  for (let y = 50; y > -50; y -= 10) {
-    square.push(createVector(-50, y));
-  }    
-  
-  
-  
-  
-
-  
-///////////////////////  
+ 
 }
 
 function draw() 
@@ -108,13 +60,13 @@ background(55, 173, 198);
 //background(1, 73, 108);
 strokeWeight(3);
 stroke(233, 144, 34);
-noFill();
+//noFill();
 
 
   
-//console.log(asciipic);
-//print(asciipic);
-
+//console.log(CountValue2);
+//print(lines);
+//print(int(LineValues));
 
 //Stalks = 50; 
 //HandPile;
@@ -127,8 +79,8 @@ noFill();
 //CountValue3;
 //LineValue;
 //asciipic;  
-
-i1=55; 
+//fill(LineValue);
+i1=25; 
 i2=144;
 i3=0;
 i4=0;
@@ -153,11 +105,13 @@ e6=0;
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);  
+coins();
 eHexagon();
 iHexagon();
 pointsE();
 pointsD();
 //trigram();
+
   
 divideStalks();  
 divideEastAndWest();
@@ -165,51 +119,21 @@ lineCast();
 lineChanging();
   
   
-  
 
-  
-//////////////////////////  
- translate(width/2, height/2);   
-  // We will keep how far the vertices are from their target
-  let totalDistance = 0;
+ 
 
-  // Look at each vertex
-  for (let i = 0; i < circle.length; i++) {
-    let v1;
-    // Are we lerping to the circle or square?
-    if (state) {
-      v1 = circle[i];
-    } else {
-      v1 = square[i];
-    }
-    // Get the vertex we will draw
-    let v2 = morph[i];
-    // Lerp to the target
-    v2.lerp(v1, 0.1);
-    // Check how far we are from target
-    totalDistance += p5.Vector.dist(v1, v2);
-  }
-
-  // If all the vertices are close, switch shape
-  if (totalDistance < 0.1) {
-    state = !state;
-  }
-
-  // Draw relative to center
-  translate(width / 2, height / 2);
-  strokeWeight(4);
-  // Draw a polygon that makes up all the vertices
-  beginShape();
-  noFill();
-  stroke(255);
-
-  morph.forEach(v => {
-    vertex(v.x, v.y);
-  });
-  endShape(CLOSE);  
-  
-//////////////////////////  
 }
+
+
+
+
+
+
+
+
+
+
+
 
 function pointsE()
 {
@@ -626,4 +550,28 @@ function ngon(n, x, y, d) {
   }
   endShape();
 
+}
+
+function coins()
+{
+  
+ if (CountValue1 == 2) {coinCountValue1 = color(0);} 
+else if (CountValue1 == 3) {coinCountValue1 = color(255);} 
+  
+ if (CountValue2 == 2) {coinCountValue2 = color(0);} 
+else if (CountValue2 == 3) {coinCountValue2 = color(255);}   
+  
+ if (CountValue3 == 2) {coinCountValue3 = color(0);} 
+else if (CountValue3 == 3) {coinCountValue3 = color(255);}   
+  
+  beginShape();
+  fill(coinCountValue1);
+  circle(width * 0.7, height * 0.1, 89);
+  fill(coinCountValue2);
+  circle(width * 0.5, height * 0.1, 89);
+  fill(coinCountValue3);
+  circle(width * 0.3, height * 0.1, 89);
+  endShape();   
+  
+  
 }
