@@ -104,8 +104,8 @@ function setup() {
 
 function draw() 
 {
-//background(55, 173, 198);
-background(1, 73, 108);
+background(55, 173, 198);
+//background(1, 73, 108);
 strokeWeight(3);
 stroke(233, 144, 34);
 noFill();
