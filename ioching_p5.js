@@ -8,10 +8,11 @@ var CountValue1;
 var CountValue2;
 var CountValue3;
 var LineValue;
-var DrawLine;
+
 var asciipic;  
 
-
+var DrawLine;
+var LineCast;
 
 let sides = 3;
 let angle, px, py;
@@ -25,8 +26,6 @@ let i4=0;
 let i5=0;
 let i6=0;
 
-
-
 let e1=0;
 let e2=0;
 let e3=0;
@@ -34,15 +33,11 @@ let e4=0;
 let e5=0;
 let e6=0;
 
-
-
-
-
-
-
 let coinCountValue1=0;
 let coinCountValue2=0;
 let coinCountValue3=0;
+
+var clicks = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -58,9 +53,10 @@ function setup() {
 function draw() 
 {
 background(55, 173, 198);
+stroke(55, 173, 198);
 //background(1, 73, 108);
-strokeWeight(3);
-stroke(233, 144, 34);
+strokeWeight(8);
+//stroke(233, 144, 34);
 //noFill();
 
 
@@ -94,7 +90,7 @@ pointsD();
 //lineCast();
 //DrawLine();
   
-  
+ 
 
  
 
@@ -207,7 +203,7 @@ function iHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate(PI/3);
-  polygon(-100, 0, 50, 3);
+  polygon(-68, 0, 34, 3);
   pop();
    
     push();
@@ -217,7 +213,7 @@ function iHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate((2*PI)/3);
-  polygon(-100, 0, 50, 3);
+  polygon(-68, 0, 34, 3);
   pop();
   
   push();
@@ -227,7 +223,7 @@ function iHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate(PI);
-  polygon(-100, 0, 50, 3);
+  polygon(-68, 0, 34, 3);
   pop();
   
   push();
@@ -237,7 +233,7 @@ function iHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate((4*PI)/3);
-  polygon(-100, 0, 50, 3);
+  polygon(-68, 0, 34, 3);
   pop();
   
   push();
@@ -247,7 +243,7 @@ function iHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate((5*PI)/3);
-  polygon(-100, 0, 50, 3);
+  polygon(-68, 0, 34, 3);
   pop();
   
   push();
@@ -257,7 +253,7 @@ function iHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate(2*PI);
-  polygon(-100, 0, 50, 3);
+  polygon(-68, 0, 34, 3);
   pop();
   
 }
@@ -272,7 +268,7 @@ function eHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate(PI/3);
-  polygon(-200, 0, 100, 3);
+  polygon(-110, 0, 55, 3);
   pop();
    
     push();
@@ -282,7 +278,7 @@ function eHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate((2*PI)/3);
-  polygon(-200, 0, 100, 3);
+  polygon(-110, 0, 55, 3);
   pop();
   
   push();
@@ -292,7 +288,7 @@ function eHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate(PI);
-  polygon(-200, 0, 100, 3);
+  polygon(-110, 0, 55, 3);
   pop();
   
   push();
@@ -302,7 +298,7 @@ function eHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate((4*PI)/3);
-  polygon(-200, 0, 100, 3);
+  polygon(-110, 0, 55, 3);
   pop();
   
   push();
@@ -312,7 +308,7 @@ function eHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate((5*PI)/3);
-  polygon(-200, 0, 100, 3);
+  polygon(-110, 0, 55, 3);
   pop();
   
   push();
@@ -322,7 +318,7 @@ function eHexagon()
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
   rotate(2*PI);
-  polygon(-200, 0, 100, 3);
+  polygon(-110, 0, 55, 3);
   pop();
   
 }
@@ -346,51 +342,7 @@ function polygon(x, y, radius, npoints, pt) {
 }
 
 
- function mouseClicked() 
-{
- lineCast();
- steps();
-  
-  
-
-  
-  
-}   
-    
-
-function steps()
-{
-for (let i = 0; i < 6 + 1; i++) {
-    
-      switch(i) {
-    case '0':
-     i1 = 0;
-     e1 = 0;      
-      break;
-    case '1':
-     i2 = 38;
-     e2 = 212;
-      break;
-    case '2':
-     i3 = 24;
-     e3 = 56;     
-      break;
-    case '3':
-     i4 = 251;
-     e4 = 3;
-      break;
-    case '4':
-     i5 = 35;
-     e5 = 67;
-      break;
-    case '5':
-     i6 = 156;
-     e6 = 96;
-      break;
-}
-}     
-}
-  
+ 
    
 
 
@@ -424,6 +376,7 @@ HandPile = HandPile + EastRemainder + WestRemainder;
 //let LineCast = 
 function lineCast() //3///////////////////////////////////////////////
 {
+
 //This function creates the pictures of lines as broken or unbroken
 //and changing or unchanging 
 
@@ -491,10 +444,10 @@ LineValue = CountValue1 + CountValue2 + CountValue3;
 // If 8 Line = yielding
 // if 9 Line = strong but Changing
 // if 6 Line = yielding but Changing
-if(LineValue == 6) {DrawLine=('weak',true)}
-if(LineValue == 7) {DrawLine=('strong',false)}
-if(LineValue == 8) {DrawLine=('weak',false)}
-if(LineValue == 9) {DrawLine=('strong',true)}
+if(LineValue == 6) {DrawLine=('weak',true);}
+if(LineValue == 7) {DrawLine=('strong',false);}
+if(LineValue == 8) {DrawLine=('weak',false);}
+if(LineValue == 9) {DrawLine=('strong',true);}
   
  
 }// End LineCast Function
@@ -506,10 +459,10 @@ function DrawLine(lines,changing) //4///////////////////////////////////
 //if (changing && lines == 'strong') {asciipic = '====x===='}
 //if (!changing && lines == 'strong') {asciipic = '========='}
 //if (!changing && lines == 'weak') {asciipic = '===&nbsp;&nbsp;&nbsp;==='}
-if (changing && lines == 'weak')   {asciipic = 1}
-if (changing && lines == 'strong') {asciipic = 55}
-if (!changing && lines == 'strong') {asciipic = 144}
-if (!changing && lines == 'weak') {asciipic = 233}
+if (changing && lines == 'weak')   {asciipic = 1;}
+if (changing && lines == 'strong') {asciipic = 55;}
+if (!changing && lines == 'strong') {asciipic = 144;}
+if (!changing && lines == 'weak') {asciipic = 233;}
 }
   
 
@@ -552,6 +505,63 @@ else if (CountValue3 == 3) {coinCountValue3 = color(255);}
   fill(coinCountValue3);
   circle(width * 0.3, height * 0.1, 89);
   endShape();   
-  
-  
+ 
 }
+
+
+
+
+function steps()
+{
+
+clicks ++;
+  
+//for (let i = 0; i < 6 + 1; i++) {
+if(clicks==6){clicks=0;}  
+  
+ console.log(clicks);  
+  
+      switch(clicks) {
+    case 0:
+     i1 = color(coinCountValue1);
+     e1 = color(coinCountValue1);      
+      break;
+    case 1:
+     i2 = color(coinCountValue1);
+     e2 = color(coinCountValue1);
+      break;
+    case 2:
+     i3 = color(coinCountValue1);
+     e3 = color(coinCountValue1);     
+      break;
+    case 3:
+     i4 = color(coinCountValue1);
+     e4 = color(coinCountValue1);
+      break;
+    case 4:
+     i5 = color(coinCountValue1);
+     e5 = color(coinCountValue1);
+      break;
+    case 5:
+     i6 = color(coinCountValue1);
+     e6 = color(coinCountValue1);
+      break;
+}
+//}     
+}
+
+
+
+function mousePressed() 
+{
+ lineCast();
+ steps();
+
+//print (LineValue);
+print (DrawLine);
+//print (asciipic);    
+//print (LineCast);  
+//print(int(0));
+//print (changing);  
+//print (lines); 
+}   
