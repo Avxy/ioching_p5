@@ -40,7 +40,7 @@ let coinCountValue3=0;
 var clicks = 0;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   setAttributes('antialias', true);
  
 
@@ -59,7 +59,7 @@ strokeWeight(8);
 //stroke(233, 144, 34);
 //noFill();
 
-
+//translate(width*0.5, height*0.5);
   
 //console.log(asciipic);
 //print(lines);
@@ -76,12 +76,33 @@ strokeWeight(8);
   
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
-//  rotateZ(frameCount * 0.01);  
-coins();
-eHexagon();
-iHexagon();
-pointsE();
-pointsD();
+//  rotateZ(frameCount * 0.01); 
+   
+
+  coins();
+  
+  eHexagon();
+  iHexagon();
+
+  push();
+  translate(width*-0.3, height*0.15);
+  pointsEB();
+  pop();
+  
+  push();
+  translate(width*0.3, height*0.15);
+  pointsDB();
+  pop();
+  
+  push();
+  translate(width*-0.3, height*-0.15);
+  pointsEC();
+  pop();
+  
+  push();
+  translate(width*0.3, height*-0.15);
+  pointsDC();
+  pop();
 //trigram();
 
   
@@ -107,11 +128,11 @@ pointsD();
 
 
 
-function pointsE()
+function pointsEB()
 {
 
 beginShape(POINTS);
-translate(width/7, height/2);
+//translate(-width*0.3, height*0);
 rectMode(CENTER);
 let pE = 0;
 let pM = 55;
@@ -135,11 +156,11 @@ endShape();
 
 }
 
-function pointsD()
+function pointsDB()
 {
 
 beginShape(POINTS);
-translate(width*0.7, height*0);
+//translate(width*0.6, height*0);
 rectMode(CENTER);
 let pE = 0;
 let pM = 55;
@@ -162,6 +183,70 @@ n9 = rect(pE+pM, pE+pM, wS, hS);
 endShape();
 
 }
+
+
+
+
+function pointsEC()
+{
+
+beginShape(POINTS);
+//translate(-width*0.3, height*0);
+rectMode(CENTER);
+let pE = 0;
+let pM = 55;
+let wS = 55;
+let hS = 34;
+
+noStroke();
+fill(255);  
+  
+n1 = rect(pE-pM, pE-pM, wS, hS);
+n2 = rect(pE, pE-pM, wS, hS);
+n3 = rect(pE+pM, pE-pM, wS, hS);
+n4 = rect(pE-pM, pE, wS, hS);
+n5 = rect(pE, pE, wS, hS);
+n6 = rect(pE+pM, pE, wS, hS);
+n7 = rect(pE-pM, pE+pM, wS, hS);
+n8 = rect(pE, pE+pM, wS, hS);
+n9 = rect(pE+pM, pE+pM, wS, hS);
+
+endShape();
+
+}
+
+function pointsDC()
+{
+
+beginShape(POINTS);
+//translate(width*0.6, height*0);
+rectMode(CENTER);
+let pE = 0;
+let pM = 55;
+let wS = 55;
+let hS = 34;
+
+noStroke();
+fill(255);  
+  
+n1 = rect(pE-pM, pE-pM, wS, hS);
+n2 = rect(pE, pE-pM, wS, hS);
+n3 = rect(pE+pM, pE-pM, wS, hS);
+n4 = rect(pE-pM, pE, wS, hS);
+n5 = rect(pE, pE, wS, hS);
+n6 = rect(pE+pM, pE, wS, hS);
+n7 = rect(pE-pM, pE+pM, wS, hS);
+n8 = rect(pE, pE+pM, wS, hS);
+n9 = rect(pE+pM, pE+pM, wS, hS);
+
+endShape();
+
+}
+
+
+
+
+
 
 function trigram()
 {
@@ -184,7 +269,7 @@ endShape();
   
 function solid()
 {
-  translate(240, 0, 0);
+//  translate(240, 0, 0);
   push();
   rotateZ(frameCount * 0.01);
   rotateX(frameCount * 0.01);
@@ -198,7 +283,7 @@ function iHexagon()
  // angleMode(DEGREES);
   push();
   fill(i1);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -208,7 +293,7 @@ function iHexagon()
    
     push();
   fill(i2);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -218,7 +303,7 @@ function iHexagon()
   
   push();
   fill(i3);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -228,7 +313,7 @@ function iHexagon()
   
   push();
   fill(i4);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -238,7 +323,7 @@ function iHexagon()
   
   push();
   fill(i5);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -248,7 +333,7 @@ function iHexagon()
   
   push();
   fill(i6);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -263,7 +348,7 @@ function eHexagon()
 // angleMode(DEGREES);
   push();
   fill(e1);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -273,7 +358,7 @@ function eHexagon()
    
     push();
   fill(e2);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -283,7 +368,7 @@ function eHexagon()
   
   push();
   fill(e3);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -293,7 +378,7 @@ function eHexagon()
   
   push();
   fill(e4);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -303,7 +388,7 @@ function eHexagon()
   
   push();
   fill(e5);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -313,7 +398,7 @@ function eHexagon()
   
   push();
   fill(e6);
-  translate(width * 0.5, height * 0.5);
+//  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
 //  rotateY(frameCount * 0.01);
 //  rotateZ(frameCount * 0.01);
@@ -374,7 +459,7 @@ HandPile = HandPile + EastRemainder + WestRemainder;
 }
 
 //let LineCast = 
-function lineCast() //3///////////////////////////////////////////////
+function LineCast() //3///////////////////////////////////////////////
 {
 
 //This function creates the pictures of lines as broken or unbroken
@@ -499,11 +584,11 @@ else if (CountValue3 == 3) {coinCountValue3 = color(255);}
   
   beginShape();
   fill(coinCountValue1);
-  circle(width * 0.7, height * 0.1, 89);
+  circle(width* 0.1, height * -0.3, 55);
   fill(coinCountValue2);
-  circle(width * 0.5, height * 0.1, 89);
+  circle(width * 0, height * -0.3, 55);
   fill(coinCountValue3);
-  circle(width * 0.3, height * 0.1, 89);
+  circle(width * -0.1, height * -0.3, 55);
   endShape();   
  
 }
@@ -554,14 +639,14 @@ if(clicks==6){clicks=0;}
 
 function mousePressed() 
 {
- lineCast();
+LineCast(asciipic);
  steps();
 
 //print (LineValue);
-print (DrawLine);
-//print (asciipic);    
+//print (DrawLine);
+print (asciipic);    
 //print (LineCast);  
 //print(int(0));
 //print (changing);  
-//print (lines); 
+print (LineCast); 
 }   
