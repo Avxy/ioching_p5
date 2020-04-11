@@ -19,25 +19,43 @@ let angle, px, py;
 
 
 
-let i1=0; 
-let i2=0;
-let i3=0;
-let i4=0;
-let i5=0;
-let i6=0;
+let i1=255; 
+let i2=255;
+let i3=255;
+let i4=255;
+let i5=255;
+let i6=255;
 
-let e1=0;
-let e2=0;
-let e3=0;
-let e4=0;
-let e5=0;
-let e6=0;
+let e1=255;
+let e2=255;
+let e3=255;
+let e4=255;
+let e5=255;
+let e6=255;
 
-let coinCountValue1=0;
-let coinCountValue2=0;
-let coinCountValue3=0;
+let coinCountValue1=255;
+let coinCountValue2=255;
+let coinCountValue3=255;
 
 var clicks = 0;
+
+let pE = 0;
+let pM = 34;
+let wS = 34;
+let hS = 21;
+
+let l1 = 255;
+let l2 = 255;
+let l3 = 255;
+let l4 = 255;
+let l5 = 255;
+let l6 = 255;
+let l7 = 255;
+let l8 = 255;
+let l9 = 255;
+let l10 = 255;
+let l11 = 255;
+let l12 = 255;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
@@ -53,9 +71,9 @@ function setup() {
 function draw() 
 {
 background(55, 173, 198);
-stroke(55, 173, 198);
+noStroke(55, 173, 198);
 //background(1, 73, 108);
-strokeWeight(8);
+strokeWeight(4);
 //stroke(233, 144, 34);
 //noFill();
 
@@ -65,8 +83,26 @@ strokeWeight(8);
 //print(lines);
 //print(int(0));
 
+  push();
+  rotateZ(frameCount * 0.003);
+  rotateX(frameCount * 0.002);
+  rotateY(frameCount * 0.002);
+  torus(610, 1);
+  pop();
 
-
+   push();
+  rotateZ(frameCount * 0.002);
+  rotateX(frameCount * 0.003);
+  rotateY(frameCount * 0.002);
+  torus(610, 1);
+  pop();
+  
+   push();
+  rotateZ(frameCount * 0.002);
+  rotateX(frameCount * 0.002);
+  rotateY(frameCount * 0.003);
+  torus(610, 1);
+  pop();
   
   
   
@@ -79,28 +115,50 @@ strokeWeight(8);
 //  rotateZ(frameCount * 0.01); 
    
 
-  coins();
+//  coins();
+  
+  push();
+  translate(width * -0.15, height * -0.3);
+  rotateX(frameCount * 0.02);
+  rotateZ(frameCount * 0.02);
+  coinsC();
+  pop();
+  
+  push();
+  translate(width * 0, height * -0.3);
+  rotateX(frameCount * 0.02);
+  rotateZ(frameCount * 0.02);
+  coinsC();
+  pop();
+  
+  push();
+  translate(width * 0.15, height * -0.3);
+  rotateX(frameCount * 0.02);
+  rotateZ(frameCount * 0.02);
+  coinsC();
+  pop();
+  
   
   eHexagon();
   iHexagon();
 
   push();
-  translate(width*-0.3, height*0.15);
+  translate(width*-0.3, height*0.08);
   pointsEB();
   pop();
   
   push();
-  translate(width*0.3, height*0.15);
+  translate(width*0.3, height*0.08);
   pointsDB();
   pop();
   
   push();
-  translate(width*-0.3, height*-0.15);
+  translate(width*-0.3, height*-0.08);
   pointsEC();
   pop();
   
   push();
-  translate(width*0.3, height*-0.15);
+  translate(width*0.3, height*-0.08);
   pointsDC();
   pop();
 //trigram();
@@ -134,22 +192,28 @@ function pointsEB()
 beginShape(POINTS);
 //translate(-width*0.3, height*0);
 rectMode(CENTER);
-let pE = 0;
-let pM = 55;
-let wS = 55;
-let hS = 34;
+
 
 noStroke();
 fill(255);  
   
 n1 = rect(pE-pM, pE-pM, wS, hS);
+push(); 
+  fill(coinCountValue1);
 n2 = rect(pE, pE-pM, wS, hS);
+  pop();
 n3 = rect(pE+pM, pE-pM, wS, hS);
 n4 = rect(pE-pM, pE, wS, hS);
+  push();  
+fill(coinCountValue1);
 n5 = rect(pE, pE, wS, hS);
+   pop();
 n6 = rect(pE+pM, pE, wS, hS);
 n7 = rect(pE-pM, pE+pM, wS, hS);
+  push();  
+  fill(coinCountValue1);
 n8 = rect(pE, pE+pM, wS, hS);
+   pop();
 n9 = rect(pE+pM, pE+pM, wS, hS);
 
 endShape();
@@ -162,24 +226,29 @@ function pointsDB()
 beginShape(POINTS);
 //translate(width*0.6, height*0);
 rectMode(CENTER);
-let pE = 0;
-let pM = 55;
-let wS = 55;
-let hS = 34;
+
 
 noStroke();
 fill(255);  
   
 n1 = rect(pE-pM, pE-pM, wS, hS);
+push(); 
+  fill(coinCountValue1);
 n2 = rect(pE, pE-pM, wS, hS);
+  pop();
 n3 = rect(pE+pM, pE-pM, wS, hS);
 n4 = rect(pE-pM, pE, wS, hS);
+  push();  
+fill(coinCountValue1);
 n5 = rect(pE, pE, wS, hS);
+   pop();
 n6 = rect(pE+pM, pE, wS, hS);
 n7 = rect(pE-pM, pE+pM, wS, hS);
+  push();  
+  fill(coinCountValue1);
 n8 = rect(pE, pE+pM, wS, hS);
+   pop();
 n9 = rect(pE+pM, pE+pM, wS, hS);
-
 endShape();
 
 }
@@ -193,22 +262,28 @@ function pointsEC()
 beginShape(POINTS);
 //translate(-width*0.3, height*0);
 rectMode(CENTER);
-let pE = 0;
-let pM = 55;
-let wS = 55;
-let hS = 34;
+
 
 noStroke();
 fill(255);  
   
 n1 = rect(pE-pM, pE-pM, wS, hS);
+push(); 
+  fill(coinCountValue1);
 n2 = rect(pE, pE-pM, wS, hS);
+  pop();
 n3 = rect(pE+pM, pE-pM, wS, hS);
 n4 = rect(pE-pM, pE, wS, hS);
+  push();  
+fill(coinCountValue1);
 n5 = rect(pE, pE, wS, hS);
+   pop();
 n6 = rect(pE+pM, pE, wS, hS);
 n7 = rect(pE-pM, pE+pM, wS, hS);
+  push();  
+  fill(coinCountValue1);
 n8 = rect(pE, pE+pM, wS, hS);
+   pop();
 n9 = rect(pE+pM, pE+pM, wS, hS);
 
 endShape();
@@ -221,22 +296,28 @@ function pointsDC()
 beginShape(POINTS);
 //translate(width*0.6, height*0);
 rectMode(CENTER);
-let pE = 0;
-let pM = 55;
-let wS = 55;
-let hS = 34;
+
 
 noStroke();
 fill(255);  
   
 n1 = rect(pE-pM, pE-pM, wS, hS);
+push(); 
+  fill(coinCountValue1);
 n2 = rect(pE, pE-pM, wS, hS);
+  pop();
 n3 = rect(pE+pM, pE-pM, wS, hS);
 n4 = rect(pE-pM, pE, wS, hS);
+  push();  
+fill(coinCountValue1);
 n5 = rect(pE, pE, wS, hS);
+   pop();
 n6 = rect(pE+pM, pE, wS, hS);
 n7 = rect(pE-pM, pE+pM, wS, hS);
+  push();  
+  fill(coinCountValue1);
 n8 = rect(pE, pE+pM, wS, hS);
+   pop();
 n9 = rect(pE+pM, pE+pM, wS, hS);
 
 endShape();
@@ -280,8 +361,10 @@ function solid()
 
 function iHexagon()
 {
+  stroke(55,173,189);
  // angleMode(DEGREES);
   push();
+  
   fill(i1);
 //  translate(width * 0.5, height * 0.5);
 //  rotateX(frameCount * 0.01);
@@ -345,6 +428,7 @@ function iHexagon()
 
 function eHexagon()
 {
+  stroke(55,173,189);
 // angleMode(DEGREES);
   push();
   fill(e1);
@@ -552,7 +636,9 @@ if (!changing && lines == 'weak') {asciipic = 233;}
   
 
 function ngon(n, x, y, d) {
+
   beginShape();
+
   translate(d/2, 0);
   for (let i = 0; i < n + 1; i++) {
     angle = TWO_PI / n * i;
@@ -570,7 +656,9 @@ function ngon(n, x, y, d) {
 
 }
 
-function coins()
+
+
+function coinsC()
 {
   
  if (CountValue1 == 2) {coinCountValue1 = color(0);} 
@@ -581,15 +669,17 @@ else if (CountValue2 == 3) {coinCountValue2 = color(255);}
   
  if (CountValue3 == 2) {coinCountValue3 = color(0);} 
 else if (CountValue3 == 3) {coinCountValue3 = color(255);}   
-  
-  beginShape();
-  fill(coinCountValue1);
-  circle(width* 0.1, height * -0.3, 55);
-  fill(coinCountValue2);
-  circle(width * 0, height * -0.3, 55);
-  fill(coinCountValue3);
-  circle(width * -0.1, height * -0.3, 55);
-  endShape();   
+
+//  beginShape();
+//  push();
+  noStroke(0);
+    normalMaterial();
+ // fill(coinCountValue2);
+//  rotateX(frameCount * 0.02);
+//  rotateZ(frameCount * 0.02);
+  cylinder(34, 8, 24, 1, 1, 1);
+//  pop();
+//  endShape();   
  
 }
 
@@ -639,7 +729,7 @@ if(clicks==6){clicks=0;}
 
 function mousePressed() 
 {
-LineCast(asciipic);
+LineCast();
  steps();
 
 //print (LineValue);
