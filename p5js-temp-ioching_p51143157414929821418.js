@@ -57,13 +57,23 @@ let l10 = 255;
 let l11 = 255;
 let l12 = 255;
 
+
+
+let img;
+function preload() {
+  img = loadImage('images/y.jpg');
+}
+
+
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   setAttributes('antialias', true);
  
 
   
-  
+    image(img, 500, 500, 50, 50);
   
  
 }
@@ -76,7 +86,13 @@ noStroke(55, 173, 198);
 strokeWeight(4);
 //stroke(233, 144, 34);
 //noFill();
-
+  
+  
+  let locX = mouseX - height / 2;
+  let locY = mouseY - width / 2;
+  
+  ambientLight(144, 144, 144);
+  pointLight(255, 255, 255, locX, locY, 233);
 //translate(width*0.5, height*0.5);
   
 //console.log(asciipic);
@@ -84,24 +100,24 @@ strokeWeight(4);
 //print(int(0));
 
   push();
-  rotateZ(frameCount * 0.003);
-  rotateX(frameCount * 0.002);
-  rotateY(frameCount * 0.002);
-  torus(610, 1);
+  rotateZ(frameCount * 0.008);
+  rotateX(frameCount * 0.005);
+  rotateY(frameCount * 0.005);
+  torus(610, 3);
   pop();
 
    push();
-  rotateZ(frameCount * 0.002);
-  rotateX(frameCount * 0.003);
-  rotateY(frameCount * 0.002);
-  torus(610, 1);
+  rotateZ(frameCount * 0.005);
+  rotateX(frameCount * 0.008);
+  rotateY(frameCount * 0.005);
+  torus(610, 3);
   pop();
   
    push();
-  rotateZ(frameCount * 0.002);
-  rotateX(frameCount * 0.002);
-  rotateY(frameCount * 0.003);
-  torus(610, 1);
+  rotateZ(frameCount * 0.005);
+  rotateX(frameCount * 0.005);
+  rotateY(frameCount * 0.008);
+  torus(610, 3);
   pop();
   
   
@@ -119,21 +135,21 @@ strokeWeight(4);
   
   push();
   translate(width * -0.15, height * -0.3);
-  rotateX(frameCount * 0.02);
+ // rotateX(frameCount * 0.02);
   rotateZ(frameCount * 0.02);
   coinsC();
   pop();
   
   push();
   translate(width * 0, height * -0.3);
-  rotateX(frameCount * 0.02);
+//  rotateX(frameCount * 0.02);
   rotateZ(frameCount * 0.02);
   coinsC();
   pop();
   
   push();
   translate(width * 0.15, height * -0.3);
-  rotateX(frameCount * 0.02);
+//  rotateX(frameCount * 0.02);
   rotateZ(frameCount * 0.02);
   coinsC();
   pop();
@@ -661,19 +677,20 @@ function ngon(n, x, y, d) {
 function coinsC()
 {
   
- if (CountValue1 == 2) {coinCountValue1 = color(0);} 
+ if (CountValue1 == 2) {coinCountValue1 = color(55,173,198);} 
 else if (CountValue1 == 3) {coinCountValue1 = color(255);} 
   
- if (CountValue2 == 2) {coinCountValue2 = color(0);} 
+ if (CountValue2 == 2) {coinCountValue2 = color(55,173,198);} 
 else if (CountValue2 == 3) {coinCountValue2 = color(255);}   
   
- if (CountValue3 == 2) {coinCountValue3 = color(0);} 
+ if (CountValue3 == 2) {coinCountValue3 = color(55,173,198);} 
 else if (CountValue3 == 3) {coinCountValue3 = color(255);}   
 
 //  beginShape();
 //  push();
   noStroke(0);
-    normalMaterial();
+     specularMaterial(250);
+ //   ambientMaterial(250);
  // fill(coinCountValue2);
 //  rotateX(frameCount * 0.02);
 //  rotateZ(frameCount * 0.02);
