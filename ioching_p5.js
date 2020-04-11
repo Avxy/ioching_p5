@@ -1,14 +1,15 @@
-let Stalks = 50; 
-let HandPile;
-let EastPile;
-let WestPile;
-let EastRemainder;
-let WestRemainder;
-let CountValue1;
-let CountValue2;
-let CountValue3;
-let LineValue;
-let asciipic;  
+var Stalks = 50; 
+var HandPile;
+var EastPile;
+var WestPile;
+var EastRemainder;
+var WestRemainder;
+var CountValue1;
+var CountValue2;
+var CountValue3;
+var LineValue;
+var DrawLine;
+var asciipic;  
 
 
 
@@ -17,8 +18,8 @@ let angle, px, py;
 
 
 
-let i1=144; 
-let i2=144;
+let i1=0; 
+let i2=0;
 let i3=0;
 let i4=0;
 let i5=0;
@@ -26,8 +27,8 @@ let i6=0;
 
 
 
-let e1=144;
-let e2=144;
+let e1=0;
+let e2=0;
 let e3=0;
 let e4=0;
 let e5=0;
@@ -64,37 +65,12 @@ stroke(233, 144, 34);
 
 
   
-//console.log(CountValue2);
+//console.log(asciipic);
 //print(lines);
-//print(int(LineValues));
-
-//Stalks = 50; 
-//HandPile;
-//EastPile;
-//WestPile;
-//EastRemainder;
-//WestRemainder;
-//CountValue1;
-//CountValue2;
-//CountValue3;
-//LineValue;
-//asciipic;  
-//fill(LineValue);
-i1=25; 
-i2=144;
-i3=0;
-i4=0;
-i5=0;
-i6=0;
+//print(int(0));
 
 
 
-e1=144;
-e2=144;
-e3=0;
-e4=0;
-e5=0;
-e6=0;
   
   
   
@@ -113,10 +89,10 @@ pointsD();
 //trigram();
 
   
-divideStalks();  
-divideEastAndWest();
-lineCast();
-lineChanging();
+//divideStalks();  
+//divideEastAndWest();
+//lineCast();
+//DrawLine();
   
   
 
@@ -388,8 +364,8 @@ for (let i = 0; i < 6 + 1; i++) {
     
       switch(i) {
     case '0':
-     i1 = LineValue;
-     e1 = LineValue;      
+     i1 = 0;
+     e1 = 0;      
       break;
     case '1':
      i2 = 38;
@@ -524,12 +500,16 @@ if(LineValue == 9) {DrawLine=('strong',true)}
 }// End LineCast Function
 
 //let DrawLine = 
-function lineChanging(lines,changing) //4///////////////////////////////////
+function DrawLine(lines,changing) //4///////////////////////////////////
 {
-if (changing && lines == 'weak')   {asciipic = '===&nbsp;o&nbsp;==='}
-if (changing && lines == 'strong') {asciipic = '====x===='}
-if (!changing && lines == 'strong') {asciipic = '========='}
-if (!changing && lines == 'weak') {asciipic = '===&nbsp;&nbsp;&nbsp;==='}
+//if (changing && lines == 'weak')   {asciipic = '===&nbsp;o&nbsp;==='}
+//if (changing && lines == 'strong') {asciipic = '====x===='}
+//if (!changing && lines == 'strong') {asciipic = '========='}
+//if (!changing && lines == 'weak') {asciipic = '===&nbsp;&nbsp;&nbsp;==='}
+if (changing && lines == 'weak')   {asciipic = 1}
+if (changing && lines == 'strong') {asciipic = 55}
+if (!changing && lines == 'strong') {asciipic = 144}
+if (!changing && lines == 'weak') {asciipic = 233}
 }
   
 
