@@ -61,14 +61,16 @@ const s1 = p => {
   let x = 100;
   let y = 100;
   
-  let img;
+  let img1;
+  let img2;
   
   p.setup = function() {
     p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
     p.setAttributes('antialias', true);
     
-      img = p.loadImage('https://raw.githubusercontent.com/Avxy/ioching_p5/gh-pages/images/64W.png');
+      img1 = p.loadImage('https://raw.githubusercontent.com/Avxy/ioching_p5/gh-pages/images/64W89.png');
     
+      img2 = p.loadImage('https://raw.githubusercontent.com/Avxy/ioching_p5/gh-pages/images/yinYang.png');
    
     
   };
@@ -79,15 +81,16 @@ const s1 = p => {
     
   p.push();
   p.noStroke();
-  p.rotateZ(p.frameCount * 0.001);
-  p.texture(img);
+  p.rotateZ(p.frameCount * 0.0005);
+  p.texture(img1);
   p.circle(0,0,610);
   p.pop();  
     
   p.push();
-  p.rotateZ(p.frameCount * 0.01);
-  p.texture(img);
-  p.sphere(40);
+     p.noStroke();
+  p.rotateZ(p.frameCount * -0.009);
+  p.texture(img2);
+  p.circle(0,0,144);
   p.pop();
     
   //ambientLight//////////////////////////  
