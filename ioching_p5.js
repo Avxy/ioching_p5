@@ -58,15 +58,22 @@ let l11 = 255;
 let l12 = 255;
 
 
-
-
+  
+  
+  
+  
 function setup() {
+  
+  
+  
   createCanvas(windowWidth, windowHeight, WEBGL);
   setAttributes('antialias', true);
 
-  
 
 
+  loadImage('https://github.com/Avxy/ioching_p5/blob/gh-/pages/images/ichingW.jpg', img => {
+    image(img, width*0.5, height*0.5);
+  });
   
   
 
@@ -82,38 +89,30 @@ strokeWeight(4);
 //stroke(233, 144, 34);
 //noFill();
   
+ 
   
+//ambientLight//////////////////////////  
   let locX = mouseX - height / 2;
   let locY = mouseY - width / 2;
   
   ambientLight(144, 144, 144);
   pointLight(255, 255, 255, locX, locY, 233);
-//translate(width*0.5, height*0.5);
+//ambientLight////////////////////////////
   
 //console.log(asciipic);
 //print(lines);
 //print(int(0));
 
-  push();
-  rotateZ(frameCount * 0.008);
-  rotateX(frameCount * 0.005);
-  rotateY(frameCount * 0.005);
-  torus(610, 3);
-  pop();
 
-   push();
-  rotateZ(frameCount * 0.005);
-  rotateX(frameCount * 0.008);
-  rotateY(frameCount * 0.005);
-  torus(610, 3);
-  pop();
+
+
   
-   push();
-  rotateZ(frameCount * 0.005);
-  rotateX(frameCount * 0.005);
-  rotateY(frameCount * 0.008);
-  torus(610, 3);
-  pop();
+//  push();
+//  rotateZ(frameCount * 0.005);
+//  rotateX(frameCount * 0.005);
+//  rotateY(frameCount * 0.008);
+//  torus(610, 3);
+//  pop();
   
   
   
@@ -126,29 +125,28 @@ strokeWeight(4);
 //  rotateZ(frameCount * 0.01); 
    
 
-//  coins();
-  
   push();
   translate(width * -0.15, height * -0.3);
  // rotateX(frameCount * 0.02);
   rotateZ(frameCount * 0.08);
-  coinsC();
+  coins();
   pop();
   
   push();
   translate(width * 0, height * -0.3);
 //  rotateX(frameCount * 0.02);
   rotateZ(frameCount * 0.08);
-  coinsC();
+  coins();
   pop();
   
   push();
   translate(width * 0.15, height * -0.3);
 //  rotateX(frameCount * 0.02);
   rotateZ(frameCount * 0.08);
-  coinsC();
+  coins();
   pop();
-  
+ 
+
   
   eHexagon();
   iHexagon();
@@ -669,7 +667,7 @@ function ngon(n, x, y, d) {
 
 
 
-function coinsC()
+function coins()
 {
   
  if (CountValue1 == 2) {coinCountValue1 = color(55,173,198);} 
@@ -694,6 +692,7 @@ else if (CountValue3 == 3) {coinCountValue3 = color(255);}
 //  endShape();   
  
 }
+
 
 
 
@@ -744,6 +743,7 @@ function mousePressed()
 LineCast();
  steps();
 
+
 //print (LineValue);
 //print (DrawLine);
 print (asciipic);    
@@ -752,3 +752,35 @@ print (asciipic);
 //print (changing);  
 print (LineCast); 
 }   
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+var myp5 = new p5(sketch);
+var sketch = function(p)
+{
+  
+  let x = 100; 
+  let y = 100;
+
+  p.setup = function() {
+    p.createCanvas(windowWidth, windowHeight, WEBGL);
+    
+  }
+
+  p.draw = function() {
+
+    //    p.background(79, 198, 218);
+    p.background(1, 78, 106);
+    p.fill(0);
+    //    p.rect(x,y,50,50);
+    
+    
+  }
+}
+
+var myp5 = new p5(sketch);
+//////////////////////////////////////////////////////////
